@@ -52,5 +52,6 @@ check_package_name <- function(package, bioc, local) {
 }
 
 is_available <- function(package, bioc = FALSE, local = FALSE) {
-  package %in% get_available_packages(bioc, local)
+    package %in% get_available_packages(bioc, local) &&
+        !(package %in% c("rmarkdown", "knitr", "testthat"))
 }
